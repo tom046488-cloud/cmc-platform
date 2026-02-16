@@ -1,10 +1,96 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>CMC Platform</title>
+  <title>CMC Login Test</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background: linear-gradient(135deg,#ff512f,#dd2476);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      margin: 0;
+    }
+
+    .box {
+      background: white;
+      padding: 30px;
+      border-radius: 15px;
+      width: 300px;
+      text-align: center;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+    }
+
+    input {
+      width: 100%;
+      padding: 10px;
+      margin: 10px 0;
+      border-radius: 8px;
+      border: 1px solid #ccc;
+    }
+
+    button {
+      width: 100%;
+      padding: 10px;
+      background: #dd2476;
+      color: white;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+    }
+
+    button:hover {
+      background: #ff512f;
+    }
+
+    #message {
+      margin-top: 10px;
+      font-size: 14px;
+    }
+  </style>
 </head>
+
 <body>
-  <h1>CMC Fan Platform</h1>
-  <p>Foundation started successfully.</p>
+
+<div class="box">
+  <h2>CMC Login</h2>
+
+  <input type="email" id="email" placeholder="Email">
+  <input type="password" id="password" placeholder="Password">
+  <button onclick="login()">Login</button>
+
+  <div id="message"></div>
+</div>
+
+<script>
+  const supabase = window.supabase.createClient(
+    "https://rspzdfehmjajzmppndi.supabase.co",
+    "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InJzcHpkZmVuaG1qYWp6bXBwbmRpIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NzEwODk1MzIsImV4cCI6MjA4NjY2NTUzMn0.Dn6kGI4Bffw2XmTQPQLvsauhB1vCiD6BNGth3U_nd3Y"
+  );
+
+  async function login() {
+    const email = document.getElementById("email").value;
+    const password = document.getElementById("password").value;
+
+    const { data, error } = await supabase.auth.signInWithPassword({
+      email: email,
+      password: password
+    });
+
+    if (error) {
+      document.getElementById("message").innerText = error.message;
+      document.getElementById("message").style.color = "red";
+    } else {
+      document.getElementById("message").innerText = "Login successful!";
+      document.getElementById("message").style.color = "green";
+    }
+  }
+</script>
+
 </body>
 </html>
