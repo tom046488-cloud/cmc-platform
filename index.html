@@ -1,10 +1,11 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>CMC Login Test</title>
+  <title>CMC Login</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+  <!-- Correct Supabase CDN -->
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2/dist/umd/supabase.js"></script>
 
   <style>
     body {
@@ -51,6 +52,7 @@
     #message {
       margin-top: 10px;
       font-size: 14px;
+      font-weight: bold;
     }
   </style>
 </head>
@@ -68,26 +70,30 @@
 </div>
 
 <script>
-  const supabase = window.supabase.createClient(
-    "https://rspzdfehmjajzmppndi.supabase.co",
-    "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InJzcHpkZmVuaG1qYWp6bXBwbmRpIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NzEwODk1MzIsImV4cCI6MjA4NjY2NTUzMn0.Dn6kGI4Bffw2XmTQPQLvsauhB1vCiD6BNGth3U_nd3Y"
-  );
+  const supabaseUrl = "https://rspzdfenhmjajzmpdpndi.supabase.co";
+  const supabaseKey = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InJzcHpkZmVuaG1qYWp6bXBwbmRpIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NzEwODk1MzIsImV4cCI6MjA4NjY2NTUzMn0.Dn6kGI4Bffw2XmTQPQLvsauhB1vCiD6BNGth3U_nd3Y";
+
+  const supabaseClient = window.supabase.createClient(supabaseUrl, supabaseKey);
 
   async function login() {
     const email = document.getElementById("email").value;
     const password = document.getElementById("password").value;
 
-    const { data, error } = await supabase.auth.signInWithPassword({
+    const messageBox = document.getElementById("message");
+    messageBox.innerText = "Processing...";
+    messageBox.style.color = "black";
+
+    const { data, error } = await supabaseClient.auth.signInWithPassword({
       email: email,
       password: password
     });
 
     if (error) {
-      document.getElementById("message").innerText = error.message;
-      document.getElementById("message").style.color = "red";
+      messageBox.innerText = error.message;
+      messageBox.style.color = "red";
     } else {
-      document.getElementById("message").innerText = "Login successful!";
-      document.getElementById("message").style.color = "green";
+      messageBox.innerText = "Login successful!";
+      messageBox.style.color = "green";
     }
   }
 </script>
