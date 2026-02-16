@@ -49,8 +49,6 @@
 
     #app {
       min-height: 100vh;
-      background-size: cover;
-      background-position: center;
       padding-bottom: 60px;
     }
 
@@ -72,42 +70,6 @@
       margin-bottom: 15px;
       border-radius: 12px;
     }
-
-    .chat-box {
-      position: fixed;
-      bottom: 0;
-      width: 100%;
-      background: rgba(0,0,0,0.8);
-      padding: 10px;
-      display: flex;
-    }
-
-    .chat-box input {
-      flex: 1;
-      margin: 0;
-      border-radius: 20px;
-      padding: 10px;
-    }
-
-    .chat-box button {
-      width: auto;
-      margin-left: 10px;
-      border-radius: 20px;
-      padding: 10px 15px;
-      background:#ff4b2b;
-      color:white;
-    }
-
-    .wallpaper-buttons {
-      margin-top: 10px;
-    }
-
-    .wallpaper-buttons button {
-      width: auto;
-      margin: 3px;
-      padding: 5px 10px;
-    }
-
   </style>
 </head>
 
@@ -126,6 +88,7 @@
 <!-- SIGNUP -->
 <div id="signupPage" class="center-box hidden">
   <h2>Sign Up</h2>
+  <input type="text" id="signupUsername" placeholder="Username">
   <input type="email" id="signupEmail" placeholder="Email">
   <input type="password" id="signupPassword" placeholder="Password">
   <button class="primary" onclick="signup()">Sign Up</button>
@@ -137,27 +100,13 @@
 <div id="app" class="hidden">
 
   <div class="header">
-    <div>CMC Fan Platform</div>
+    <div>Welcome, <span id="userDisplay"></span></div>
     <button onclick="logout()">Logout</button>
   </div>
 
   <div class="feed" id="feed">
     <div class="post">🔥 Welcome to CMC Fan Platform</div>
-    <div class="post">This is your social feed</div>
-  </div>
-
-  <div class="wallpaper-buttons">
-    <center>
-      Change Wallpaper:
-      <button onclick="setWallpaper(1)">Blue</button>
-      <button onclick="setWallpaper(2)">Dark</button>
-      <button onclick="setWallpaper(3)">Sunset</button>
-    </center>
-  </div>
-
-  <div class="chat-box">
-    <input type="text" placeholder="Type message...">
-    <button>Send</button>
+    <div class="post">Your account is connected to Supabase</div>
   </div>
 
 </div>
@@ -168,8 +117,38 @@
 
   const supabaseClient = window.supabase.createClient(supabaseUrl, supabaseKey);
 
+  let currentUser = null;
+
+  async function signup() {
+    const username = signupUsername.value;
+    const email = signupEmail.value;
+    const password = signupPassword.value;
+
+    const { data, error } = await supabaseClient.auth.signUp({
+      email,
+      password
+    });
+
+    if (error) {
+      signupMessage.innerText = error.message;
+      signupMessage.style.color = "red";
+      return;
+    }
+
+    if (data.user) {
+      await supabaseClient.from("users").insert({
+        id: data.user.id,
+        username: username,
+        email: email
+      });
+    }
+
+    signupMessage.innerText = "Account created!";
+    signupMessage.style.color = "lightgreen";
+  }
+
   async function login() {
-    const { error } = await supabaseClient.auth.signInWithPassword({
+    const { data, error } = await supabaseClient.auth.signInWithPassword({
       email: loginEmail.value,
       password: loginPassword.value
     });
@@ -177,24 +156,25 @@
     if (error) {
       loginMessage.innerText = error.message;
       loginMessage.style.color = "red";
-    } else {
-      showApp();
+      return;
     }
+
+    currentUser = data.user;
+    loadProfile();
   }
 
-  async function signup() {
-    const { error } = await supabaseClient.auth.signUp({
-      email: signupEmail.value,
-      password: signupPassword.value
-    });
+  async function loadProfile() {
+    const { data } = await supabaseClient
+      .from("users")
+      .select("*")
+      .eq("id", currentUser.id)
+      .single();
 
-    if (error) {
-      signupMessage.innerText = error.message;
-      signupMessage.style.color = "red";
-    } else {
-      signupMessage.innerText = "Account created! Check email.";
-      signupMessage.style.color = "lightgreen";
-    }
+    userDisplay.innerText = data.username;
+
+    loginPage.classList.add("hidden");
+    signupPage.classList.add("hidden");
+    app.classList.remove("hidden");
   }
 
   function logout() {
@@ -213,29 +193,13 @@
     app.classList.add("hidden");
   }
 
-  function showApp() {
-    loginPage.classList.add("hidden");
-    signupPage.classList.add("hidden");
-    app.classList.remove("hidden");
-  }
-
-  function setWallpaper(type) {
-    if(type===1){
-      app.style.background="linear-gradient(135deg,#1e3c72,#2a5298)";
-    }
-    if(type===2){
-      app.style.background="black";
-    }
-    if(type===3){
-      app.style.background="linear-gradient(135deg,#ff512f,#dd2476)";
-    }
-  }
-
   supabaseClient.auth.getSession().then(({data})=>{
     if(data.session){
-      showApp();
+      currentUser = data.session.user;
+      loadProfile();
     }
   });
+
 </script>
 
 </body>
