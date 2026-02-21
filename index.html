@@ -15,12 +15,14 @@
             box-sizing: border-box;
             font-family: 'Inter', sans-serif;
         }
+
         body {
             background: #0b141a;
             color: #fff;
             height: 100vh;
             overflow: hidden;
         }
+
         /* ========== AUTH ========== */
         #auth-container {
             background: #1f2c34;
@@ -31,6 +33,7 @@
             box-shadow: 0 10px 25px rgba(0,0,0,0.5);
             text-align: center;
         }
+
         .auth-logo {
             width: 90px;
             height: 90px;
@@ -39,6 +42,7 @@
             margin-bottom: 20px;
             object-fit: cover;
         }
+
         .auth-tabs {
             display: flex;
             gap: 10px;
@@ -59,12 +63,14 @@
             background: #8e44ad;
             color: #fff;
         }
+
         .auth-form {
             display: none;
         }
         .auth-form.active {
             display: block;
         }
+
         input {
             width: 100%;
             padding: 14px 16px;
@@ -78,6 +84,7 @@
         input::placeholder {
             color: #8696a0;
         }
+
         button {
             width: 100%;
             padding: 14px;
@@ -94,11 +101,13 @@
         button:hover {
             background: #9b59b6;
         }
+
         #message {
             color: #ff6b6b;
             text-align: center;
             margin-top: 16px;
         }
+
         /* ========== MAIN APP ========== */
         #mainApp {
             display: none;
@@ -106,6 +115,7 @@
             flex-direction: column;
             background: #0b141a;
         }
+
         .header {
             display: flex;
             justify-content: space-between;
@@ -161,6 +171,7 @@
             color: #2ecc71;
             font-weight: bold;
         }
+
         .notification-dropdown {
             position: absolute;
             top: 45px;
@@ -234,6 +245,7 @@
             border-radius: 6px;
             cursor: pointer;
         }
+
         .bottom-nav {
             display: flex;
             justify-content: space-around;
@@ -260,6 +272,7 @@
             font-size: 1.2rem;
             margin-bottom: 2px;
         }
+
         .page {
             display: none;
             padding: 16px;
@@ -270,6 +283,7 @@
         .page.active {
             display: block;
         }
+
         .card {
             background: #1f2c34;
             border-radius: 16px;
@@ -298,7 +312,7 @@
             display: inline-block;
             border: 1px solid rgba(255,255,255,0.2);
         }
-        /* Profile page styles */
+
         .profile-header {
             position: relative;
             margin-bottom: 20px;
@@ -351,28 +365,7 @@
             width: 20px;
             color: #8e44ad;
         }
-        .profile-pic-edit {
-            position: relative;
-            display: inline-block;
-        }
-        .profile-pic-edit img {
-            width: 100px;
-            height: 100px;
-            border-radius: 50%;
-            border: 4px solid #1f2c34;
-            cursor: pointer;
-        }
-        .profile-pic-edit i {
-            position: absolute;
-            bottom: 5px;
-            right: 5px;
-            background: #8e44ad;
-            border-radius: 50%;
-            padding: 8px;
-            font-size: 0.9rem;
-            cursor: pointer;
-        }
-        /* Celebrities grid */
+
         .celeb-grid {
             display: grid;
             grid-template-columns: repeat(auto-fill, minmax(100px, 1fr));
@@ -399,7 +392,28 @@
             font-size: 0.8rem;
             font-weight: 600;
         }
-        /* Recent chats */
+        .verified-badge {
+            color: #1877f2;
+            font-size: 0.8rem;
+            margin-left: 4px;
+        }
+        .unread-badge {
+            position: absolute;
+            top: 5px;
+            right: 5px;
+            background: #ff4d4d;
+            color: white;
+            border-radius: 50%;
+            min-width: 20px;
+            height: 20px;
+            font-size: 0.7rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 0 4px;
+            font-weight: bold;
+        }
+
         .recent-chat-item {
             display: flex;
             align-items: center;
@@ -440,23 +454,7 @@
             font-size: 0.7rem;
             color: #aaa;
         }
-        .unread-badge {
-            position: absolute;
-            top: 5px;
-            right: 5px;
-            background: #ff4d4d;
-            color: white;
-            border-radius: 50%;
-            min-width: 20px;
-            height: 20px;
-            font-size: 0.7rem;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            padding: 0 4px;
-            font-weight: bold;
-        }
-        /* Marketplace */
+
         .market-grid {
             display: grid;
             grid-template-columns: 1fr 1fr;
@@ -497,7 +495,68 @@
             width: 100%;
             cursor: pointer;
         }
-        /* Posts */
+
+        .action-btn {
+            width: 100%;
+            padding: 15px;
+            margin: 10px 0;
+            border: none;
+            border-radius: 12px;
+            font-weight: 600;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+            font-size: 1rem;
+        }
+        .btn-deposit {
+            background: #2ecc71;
+            color: white;
+        }
+        .btn-withdraw {
+            background: #e74c3c;
+            color: white;
+        }
+        .btn-primary {
+            background: #8e44ad;
+            color: white;
+        }
+
+        .upload-post-btn {
+            background: linear-gradient(145deg, #8e44ad, #6c3483);
+            color: white;
+            border: none;
+            border-radius: 40px;
+            padding: 12px 24px;
+            font-size: 1rem;
+            font-weight: 600;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+            margin: 20px auto;
+            cursor: pointer;
+            transition: 0.2s;
+            box-shadow: 0 4px 15px rgba(142,68,173,0.4);
+        }
+        .upload-post-btn i {
+            font-size: 1.2rem;
+        }
+        .upload-post-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(142,68,173,0.6);
+        }
+        .upload-post-btn.limited {
+            background: #555;
+            box-shadow: none;
+            cursor: not-allowed;
+            opacity: 0.6;
+        }
+        .upload-post-btn.limited:hover {
+            transform: none;
+        }
+
         .posts-feed {
             display: flex;
             flex-direction: column;
@@ -558,6 +617,10 @@
         .post-like.liked {
             color: #ff4d4d;
         }
+        .post-like i, .post-comment i {
+            font-size: 1.2rem;
+        }
+
         .comment-section {
             padding: 0 15px 15px;
             border-top: 1px solid #2a3942;
@@ -617,7 +680,7 @@
             color: white;
             cursor: pointer;
         }
-        /* Chat window (user) */
+
         .chat-window {
             position: fixed;
             top: 0;
@@ -739,93 +802,7 @@
             border: none;
             cursor: pointer;
         }
-        /* Admin full-screen chat window */
-        .admin-chat-window {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: #0b141a;
-            z-index: 3000;
-            display: none;
-            flex-direction: column;
-            overflow: hidden;
-        }
-        .admin-chat-header {
-            display: flex;
-            align-items: center;
-            padding: 15px;
-            background: #1f2c34;
-            border-bottom: 1px solid #8e44ad;
-        }
-        .admin-chat-header i {
-            font-size: 1.5rem;
-            cursor: pointer;
-            margin-right: 15px;
-        }
-        .admin-chat-header img {
-            width: 40px;
-            height: 40px;
-            border-radius: 50%;
-            margin-right: 10px;
-        }
-        .admin-chat-header span {
-            flex: 1;
-            font-weight: 600;
-        }
-        .admin-chat-messages {
-            flex: 1;
-            padding: 15px;
-            overflow-y: auto;
-            display: flex;
-            flex-direction: column;
-            gap: 10px;
-        }
-        .admin-chat-message {
-            max-width: 80%;
-            padding: 10px 15px;
-            border-radius: 18px;
-            font-size: 0.95rem;
-            word-wrap: break-word;
-        }
-        .admin-chat-message.sent {
-            align-self: flex-end;
-            background: #8e44ad;
-            color: white;
-            border-bottom-right-radius: 4px;
-        }
-        .admin-chat-message.received {
-            align-self: flex-start;
-            background: #2a3942;
-            color: white;
-            border-bottom-left-radius: 4px;
-        }
-        .admin-chat-input-area {
-            display: flex;
-            padding: 15px;
-            background: #1f2c34;
-            gap: 10px;
-            border-top: 1px solid #8e44ad;
-        }
-        .admin-chat-input {
-            flex: 1;
-            background: #2a3942;
-            border: none;
-            padding: 12px;
-            border-radius: 25px;
-            color: white;
-        }
-        .admin-send-btn {
-            width: 40px;
-            height: 40px;
-            border-radius: 50%;
-            background: #8e44ad;
-            color: white;
-            border: none;
-            cursor: pointer;
-        }
-        /* Wallpaper modal */
+
         .wallpaper-grid {
             display: grid;
             grid-template-columns: repeat(2, 1fr);
@@ -872,7 +849,7 @@
             padding: 2px 5px;
             border-radius: 4px;
         }
-        /* Modal */
+
         .modal {
             position: fixed;
             top: 0; left: 0; width: 100%; height: 100%;
@@ -913,6 +890,7 @@
             min-height: 80px;
             resize: vertical;
         }
+
         .gift-card-float {
             position: fixed;
             bottom: 100px;
@@ -929,7 +907,29 @@
             z-index: 2600;
             cursor: pointer;
         }
-        /* Spinner */
+
+        .profile-pic-edit {
+            position: relative;
+            display: inline-block;
+        }
+        .profile-pic-edit img {
+            width: 100px;
+            height: 100px;
+            border-radius: 50%;
+            border: 4px solid #1f2c34;
+            cursor: pointer;
+        }
+        .profile-pic-edit i {
+            position: absolute;
+            bottom: 5px;
+            right: 5px;
+            background: #8e44ad;
+            border-radius: 50%;
+            padding: 8px;
+            font-size: 0.9rem;
+            cursor: pointer;
+        }
+
         .spinner-overlay {
             position: fixed;
             top: 0; left: 0; width: 100%; height: 100%;
@@ -949,6 +949,7 @@
             animation: spin 1s linear infinite;
         }
         @keyframes spin { 0% { transform: rotate(0deg); } 100% { transform: rotate(360deg); } }
+
         #adminCelebForm {
             margin-top: 20px;
             padding: 15px;
@@ -960,7 +961,8 @@
             color: #8e44ad;
             margin-bottom: 10px;
         }
-        /* Call modal */
+
+        /* ===== CALL MODAL STYLES ===== */
         .call-modal {
             position: fixed;
             top: 0;
@@ -1025,11 +1027,18 @@
             border-radius: 8px;
             margin-bottom: 10px;
         }
+        .call-buttons {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            margin-top: 15px;
+        }
         .call-buttons button {
             margin: 5px;
             padding: 8px 12px;
         }
-        /* Support button */
+
+        /* ===== FLOATING RAINBOW SUPPORT BUTTON ===== */
         .support-chat-float {
             position: fixed;
             bottom: 180px;
@@ -1060,151 +1069,6 @@
             0% { background-position: 0% 50%; }
             50% { background-position: 100% 50%; }
             100% { background-position: 0% 50%; }
-        }
-        /* Admin page styles */
-        .admin-section {
-            background: #1f2c34;
-            border-radius: 16px;
-            padding: 16px;
-            margin-bottom: 16px;
-        }
-        .admin-section h3 {
-            margin-bottom: 12px;
-            display: flex;
-            align-items: center;
-            gap: 8px;
-            color: #8e44ad;
-            font-size: 1.1rem;
-        }
-        .stats-grid {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 10px;
-        }
-        .stat-card {
-            background: #2a3942;
-            border-radius: 12px;
-            padding: 15px;
-            text-align: center;
-        }
-        .stat-card .number {
-            font-size: 2rem;
-            font-weight: 800;
-            color: #8e44ad;
-        }
-        .admin-grid {
-            display: grid;
-            grid-template-columns: 1fr;
-            gap: 12px;
-        }
-        .admin-card {
-            background: #2a3942;
-            border-radius: 12px;
-            padding: 12px;
-            position: relative;
-        }
-        .admin-card.blocked {
-            opacity: 0.6;
-            background: #3a3a3a;
-        }
-        .admin-actions {
-            display: flex;
-            gap: 8px;
-            margin-top: 8px;
-            flex-wrap: wrap;
-        }
-        .btn-small {
-            padding: 6px 10px;
-            font-size: 0.8rem;
-            border-radius: 20px;
-            border: none;
-            cursor: pointer;
-        }
-        .btn-primary-small {
-            background: #8e44ad;
-            color: white;
-        }
-        .btn-danger-small {
-            background: #e74c3c;
-            color: white;
-        }
-        .btn-warning-small {
-            background: #f39c12;
-            color: white;
-        }
-        .badge {
-            background: #8e44ad;
-            color: white;
-            padding: 2px 6px;
-            border-radius: 10px;
-            font-size: 0.7rem;
-            display: inline-block;
-            margin-left: 5px;
-        }
-        .celeb-group {
-            margin-bottom: 20px;
-        }
-        .celeb-header {
-            display: flex;
-            align-items: center;
-            gap: 10px;
-            margin-bottom: 10px;
-            cursor: pointer;
-            padding: 8px;
-            background: rgba(142,68,173,0.2);
-            border-radius: 30px;
-        }
-        .celeb-header img {
-            width: 40px;
-            height: 40px;
-            border-radius: 50%;
-            object-fit: cover;
-        }
-        .celeb-header span {
-            font-weight: 600;
-            flex: 1;
-        }
-        .celeb-header i {
-            transition: transform 0.2s;
-        }
-        .celeb-header.collapsed i {
-            transform: rotate(-90deg);
-        }
-        .user-conversations {
-            padding-left: 10px;
-        }
-        .fan-card {
-            display: flex;
-            align-items: center;
-            gap: 12px;
-            background: #2a3942;
-            border-radius: 12px;
-            padding: 12px;
-            margin-bottom: 8px;
-        }
-        .fan-card img {
-            width: 48px;
-            height: 48px;
-            border-radius: 50%;
-            object-fit: cover;
-        }
-        .fan-info {
-            flex: 1;
-        }
-        .fan-info .name {
-            font-weight: 600;
-        }
-        .fan-info .last-msg {
-            font-size: 0.8rem;
-            color: #aaa;
-            white-space: nowrap;
-            overflow: hidden;
-            text-overflow: ellipsis;
-            max-width: 180px;
-        }
-        .fan-info .time {
-            font-size: 0.7rem;
-            color: #666;
         }
     </style>
 </head>
@@ -1273,7 +1137,7 @@
             </div>
         </div>
 
-        <!-- PAGES (existing) -->
+        <!-- PAGES -->
         <div id="home" class="page active">
             <div class="card wallet-card">
                 <div class="balance-label">Total Balance</div>
@@ -1291,7 +1155,7 @@
         <div id="celebs" class="page">
             <input type="text" class="input-box" id="searchCelebs" placeholder="Search Celebrities...">
             <div id="allCelebGrid" class="celeb-grid"></div>
-            <div id="adminCelebForm" style="display:none;">
+            <div id="adminCelebForm">
                 <h4>Add Celebrity (Admin)</h4>
                 <input type="text" id="newCelebName" class="input-box" placeholder="Name">
                 <input type="url" id="newCelebImg" class="input-box" placeholder="Image URL">
@@ -1315,6 +1179,7 @@
             <div id="recentChatsList" style="display: flex; flex-direction: column; gap: 10px;"></div>
         </div>
 
+        <!-- POSTS PAGE -->
         <div id="posts" class="page">
             <h3>Posts</h3>
             <div id="postsFeed" class="posts-feed"></div>
@@ -1355,95 +1220,8 @@
             <button class="action-btn" onclick="logout()" style="background:#333;">Log Out</button>
         </div>
 
-        <!-- NEW ADMIN PAGE (only visible to admin) -->
-        <div id="admin" class="page">
-            <!-- Sub-navigation for admin sections -->
-            <div style="display: flex; gap: 5px; overflow-x: auto; margin-bottom: 15px; padding-bottom: 5px;">
-                <button class="btn-small btn-primary-small" onclick="showAdminSection('dashboard')">Dashboard</button>
-                <button class="btn-small btn-primary-small" onclick="showAdminSection('users')">Users</button>
-                <button class="btn-small btn-primary-small" onclick="showAdminSection('posts')">Posts</button>
-                <button class="btn-small btn-primary-small" onclick="showAdminSection('celebs')">Celebrities</button>
-                <button class="btn-small btn-primary-small" onclick="showAdminSection('products')">Products</button>
-                <button class="btn-small btn-primary-small" onclick="showAdminSection('fanchats')">Fan Chats</button>
-                <button class="btn-small btn-primary-small" onclick="showAdminSection('settings')">Settings</button>
-            </div>
-
-            <!-- Admin Dashboard Section -->
-            <div id="adminDashboard" class="admin-section" style="display:block;">
-                <h3><i class="fas fa-tachometer-alt"></i> Overview</h3>
-                <div class="stats-grid">
-                    <div class="stat-card"><span class="number" id="statUsers">0</span><br>Users</div>
-                    <div class="stat-card"><span class="number" id="statPosts">0</span><br>Posts</div>
-                    <div class="stat-card"><span class="number" id="statCelebs">0</span><br>Celebrities</div>
-                    <div class="stat-card"><span class="number" id="statProducts">0</span><br>Products</div>
-                </div>
-            </div>
-
-            <!-- Admin Users Section -->
-            <div id="adminUsers" class="admin-section" style="display:none;">
-                <h3><i class="fas fa-users"></i> Manage Users</h3>
-                <input type="text" id="adminSearchUsers" class="input-box" placeholder="Search by name or email...">
-                <div id="adminUsersList" class="admin-grid"></div>
-            </div>
-
-            <!-- Admin Posts Section -->
-            <div id="adminPosts" class="admin-section" style="display:none;">
-                <h3><i class="fas fa-newspaper"></i> Manage Posts</h3>
-                <div id="adminPostsList" class="admin-grid"></div>
-            </div>
-
-            <!-- Admin Celebrities Section -->
-            <div id="adminCelebs" class="admin-section" style="display:none;">
-                <h3><i class="fas fa-star"></i> Manage Celebrities</h3>
-                <div style="display: flex; gap: 10px; margin-bottom: 15px;">
-                    <input type="text" id="adminCelebName" class="input-box" placeholder="Name">
-                    <input type="url" id="adminCelebImg" class="input-box" placeholder="Image URL">
-                    <button onclick="adminAddCelebrity()" style="width:auto;">Add</button>
-                </div>
-                <div id="adminCelebsList" class="admin-grid"></div>
-            </div>
-
-            <!-- Admin Products Section -->
-            <div id="adminProducts" class="admin-section" style="display:none;">
-                <h3><i class="fas fa-shopping-cart"></i> Manage Products</h3>
-                <div style="display: flex; gap: 10px; margin-bottom: 15px; flex-wrap: wrap;">
-                    <input type="text" id="adminProductName" class="input-box" placeholder="Name">
-                    <input type="number" id="adminProductPrice" class="input-box" placeholder="Price">
-                    <input type="text" id="adminProductIcon" class="input-box" placeholder="Icon (e.g., 'box')" value="box">
-                    <button onclick="adminAddProduct()" style="width:auto;">Add</button>
-                </div>
-                <div id="adminProductsList" class="admin-grid"></div>
-            </div>
-
-            <!-- Admin Fan Chats Section -->
-            <div id="adminFanChats" class="admin-section" style="display:none;">
-                <h3><i class="fas fa-heart"></i> Fan Conversations</h3>
-                <div id="fanChatsContainer"></div>
-            </div>
-
-            <!-- Admin Settings Section -->
-            <div id="adminSettings" class="admin-section" style="display:none;">
-                <h3><i class="fas fa-bullhorn"></i> Notifications</h3>
-                <select id="notifyTarget" class="input-box">
-                    <option value="all">All Users</option>
-                    <option value="user">Specific User</option>
-                </select>
-                <input type="text" id="notifyUserId" class="input-box" placeholder="User ID (if specific)" style="display:none;">
-                <input type="text" id="notifyTitle" class="input-box" placeholder="Title">
-                <textarea id="notifyMessage" class="input-box" placeholder="Message"></textarea>
-                <input type="text" id="notifyLink" class="input-box" placeholder="Link (optional)">
-                <button onclick="sendNotification()">Send Notification</button>
-
-                <h3 style="margin-top:20px;"><i class="fas fa-music"></i> Global Music</h3>
-                <div style="display: flex; gap: 10px;">
-                    <input type="url" id="musicUrl" class="input-box" placeholder="Music URL (mp3)">
-                    <button onclick="setMusicUrl()" style="width:auto;">Set</button>
-                </div>
-            </div>
-        </div>
-
-        <!-- Bottom Navigation (will show Admin item conditionally) -->
-        <div class="bottom-nav" id="bottomNav">
+        <!-- Bottom Navigation -->
+        <div class="bottom-nav">
             <div class="nav-item active" onclick="navTo('home', this)"><i class="fas fa-home"></i>Home</div>
             <div class="nav-item" onclick="navTo('market', this)"><i class="fas fa-store"></i>Shop</div>
             <div class="nav-item" onclick="navTo('celebs', this)"><i class="fas fa-star"></i>Stars</div>
@@ -1452,11 +1230,10 @@
             <div class="nav-item" onclick="navTo('posts', this)"><i class="fas fa-rss"></i>Posts</div>
             <div class="nav-item" onclick="navTo('wallet', this)"><i class="fas fa-wallet"></i>Wallet</div>
             <div class="nav-item" onclick="navTo('profile', this)"><i class="fas fa-user"></i>Me</div>
-            <!-- Admin item will be inserted here dynamically if user is admin -->
         </div>
     </div>
 
-    <!-- CHAT WINDOW (user) -->
+    <!-- CHAT WINDOW (with call buttons) -->
     <div id="chatInterface" class="chat-window">
         <video id="chatVideo" class="chat-background-video" loop muted playsinline preload="auto"></video>
         <div id="chatImageBg" class="chat-background-image"></div>
@@ -1464,7 +1241,7 @@
             <i class="fas fa-arrow-left" onclick="closeChat()"></i>
             <img id="chatAvatar" src="">
             <div style="flex:1;"><span id="chatName"></span><div style="font-size:0.75rem; color:#2ecc71;">Online</div></div>
-            <!-- Call buttons (hidden by default) -->
+            <!-- Call buttons (hidden by default, shown only for user chats) -->
             <div id="callButtons" style="display: none; gap: 10px; margin-right: 10px;">
                 <button id="audioCallBtn" style="background: none; border: none; color: #8e44ad; font-size: 1.2rem; cursor: pointer;">📞</button>
                 <button id="videoCallBtn" style="background: none; border: none; color: #8e44ad; font-size: 1.2rem; cursor: pointer;">🎥</button>
@@ -1474,20 +1251,6 @@
         <div class="chat-input-area">
             <input type="text" id="msgInput" class="chat-input" placeholder="Type message...">
             <button class="send-btn" onclick="sendMessage()"><i class="fas fa-paper-plane"></i></button>
-        </div>
-    </div>
-
-    <!-- ADMIN FULL-SCREEN CHAT WINDOW (for replying to fans) -->
-    <div id="adminChatWindow" class="admin-chat-window">
-        <div class="admin-chat-header">
-            <i class="fas fa-arrow-left" onclick="closeAdminChatWindow()"></i>
-            <img id="adminChatAvatar" src="" alt="avatar">
-            <span id="adminChatTitle">Chat</span>
-        </div>
-        <div id="adminChatMessages" class="admin-chat-messages"></div>
-        <div class="admin-chat-input-area">
-            <input type="text" id="adminChatInput" class="admin-chat-input" placeholder="Type message...">
-            <button class="admin-send-btn" onclick="sendAdminChatMessage()"><i class="fas fa-paper-plane"></i></button>
         </div>
     </div>
 
@@ -1609,8 +1372,6 @@
         import { getFirestore, doc, setDoc, getDoc, collection, query, where, getDocs, updateDoc, onSnapshot, orderBy, serverTimestamp, addDoc, increment, deleteDoc, writeBatch, arrayUnion, arrayRemove } from 'https://www.gstatic.com/firebasejs/11.0.2/firebase-firestore.js';
         import Toastify from 'https://cdn.jsdelivr.net/npm/toastify-js/src/toastify-es.js';
 
-        console.log("Firebase modules loaded");
-
         const firebaseConfig = {
             apiKey: "AIzaSyDvSEbNwMZJeE7WXrUvjclmSpeDyTjqLzw",
             authDomain: "fully-understand.firebaseapp.com",
@@ -1624,11 +1385,8 @@
         const auth = getAuth(app);
         const db = getFirestore(app);
 
-        console.log("Firebase initialized");
-
         const CLOUD_NAME = 'dnkll2fha';
         const UPLOAD_PRESET = 'my_website_design';
-        const ADMIN_EMAIL = "moxxxtiox@gmail.com";
 
         // ========== WALLPAPERS ==========
         const wallpapers = [
@@ -1701,11 +1459,13 @@
         let postsUnsubscribe = null;
         let commentUnsubscribes = new Map();
 
-        // Admin data
+        // Cache admin data to avoid repeated fetches
         let adminUserData = null;
-        let users = [], posts = [], celebs = [], products = [], fanMessages = [];
 
         const defaultAvatar = 'https://i.ibb.co/gZqjS62p/Gemini-Generated-Image-lh3nyulh3nyulh3n.png';
+
+        // ========== CELEBRITIES (dynamic) ==========
+        let celebrities = [];
 
         // ========== UTILITY ==========
         function formatTimeAgo(timestamp) {
@@ -1753,7 +1513,6 @@
                 });
                 Toastify({ text: "Account created", backgroundColor: "green" }).showToast();
             } catch (e) {
-                console.error("Registration error:", e);
                 Toastify({ text: e.message, backgroundColor: "#e74c3c" }).showToast();
             }
             document.getElementById('spinner').style.display = 'none';
@@ -1767,7 +1526,6 @@
             try {
                 await signInWithEmailAndPassword(auth, email, pass);
             } catch (e) {
-                console.error("Login error:", e);
                 Toastify({ text: e.message, backgroundColor: "#e74c3c" }).showToast();
             }
             document.getElementById('spinner').style.display = 'none';
@@ -1816,7 +1574,6 @@
                 document.getElementById('wallpaperModal').style.display = 'none';
                 Toastify({ text: "Wallpaper updated!" }).showToast();
             } catch (e) {
-                console.error("Save wallpaper error:", e);
                 status.textContent = 'Error: ' + e.message;
                 status.style.color = '#ff6b6b';
             }
@@ -1883,7 +1640,6 @@
                 document.getElementById('changeNameModal').style.display = 'none';
                 Toastify({ text: "Name updated successfully!", backgroundColor: "green" }).showToast();
             } catch (e) {
-                console.error("Name update error:", e);
                 status.textContent = 'Error: ' + e.message;
                 status.style.color = '#ff6b6b';
             }
@@ -2027,7 +1783,7 @@
             }
         };
 
-        // ========== LOAD CELEBRITIES ==========
+        // ========== LOAD CELEBRITIES FROM FIRESTORE ==========
         async function loadCelebrities() {
             const q = query(collection(db, 'celebrities'));
             const snap = await getDocs(q);
@@ -2035,7 +1791,7 @@
             renderCelebs();
         }
 
-        // ========== ADMIN ADD CELEBRITY (for the small form on celebs page) ==========
+        // ========== ADMIN ADD CELEBRITY ==========
         window.addCelebrity = async function() {
             const name = document.getElementById('newCelebName').value.trim();
             const img = document.getElementById('newCelebImg').value.trim();
@@ -2059,16 +1815,16 @@
         function loadUsers() {
             const q = query(collection(db, 'users'));
             onSnapshot(q, (snap) => {
-                users = snap.docs.map(d => ({ id: d.id, ...d.data() }));
                 const list = document.getElementById('userList');
                 if (!list) return;
-                list.innerHTML = users.filter(d => d.id !== currentUser.uid).map(u => `
-                    <div class="celeb-card" style="display:flex; align-items:center; gap:15px; text-align:left; padding:15px; cursor:pointer;" onclick="openUserChat('${u.fullName}', '${u.avatar}', '${u.id}')">
+                list.innerHTML = snap.docs.filter(d => d.id !== currentUser.uid).map(d => {
+                    const u = d.data();
+                    return `<div class="celeb-card" style="display:flex; align-items:center; gap:15px; text-align:left; padding:15px; cursor:pointer;" onclick="openUserChat('${u.fullName}', '${u.avatar}', '${d.id}')">
                         <img src="${u.avatar}" style="width:50px; height:50px; border-radius:50%;" onerror="this.src='${defaultAvatar}'">
                         <div style="flex:1;"><div style="font-weight:600;">${u.fullName}</div><div style="font-size:0.8rem; color:#aaa;">VIP ${u.vipLevel}</div></div>
                         <i class="fas fa-comment-dots" style="color:#8e44ad;"></i>
-                    </div>
-                `).join('');
+                    </div>`;
+                }).join('');
             });
         }
 
@@ -2172,7 +1928,6 @@
             }
 
             if (currentChatPartner.isCeleb) {
-                // Store in adminMessages for admin panel
                 await addDoc(collection(db, 'adminMessages'), {
                     userId: currentUser.uid,
                     userName: currentUserData?.fullName || 'User',
@@ -2198,476 +1953,7 @@
             if (video) video.pause();
         };
 
-        // ========== MARKETPLACE PRODUCTS ==========
-        function loadProducts() {
-            const q = query(collection(db, 'products'));
-            onSnapshot(q, (snap) => {
-                products = snap.docs.map(d => ({ id: d.id, ...d.data() }));
-                renderMarketplace();
-            });
-        }
-
-        function renderMarketplace() {
-            const grid = document.getElementById('productsGrid');
-            if (!grid) return;
-            if (products.length === 0) {
-                grid.innerHTML = '<div class="card">No products available yet.</div>';
-                return;
-            }
-            grid.innerHTML = products.map(p => `
-                <div class="product-card">
-                    <div class="product-img"><i class="fas fa-${p.icon || 'box'}"></i></div>
-                    <div class="product-info">
-                        <div class="product-title">${p.name}</div>
-                        <div class="product-price">$${p.price}</div>
-                        <button class="btn-buy" onclick="openBuyModal('${p.name}', ${p.price})">Buy Now</button>
-                    </div>
-                </div>
-            `).join('');
-        }
-
-        // ========== ADMIN PANEL FUNCTIONS ==========
-        let adminSections = {
-            dashboard: document.getElementById('adminDashboard'),
-            users: document.getElementById('adminUsers'),
-            posts: document.getElementById('adminPosts'),
-            celebs: document.getElementById('adminCelebs'),
-            products: document.getElementById('adminProducts'),
-            fanchats: document.getElementById('adminFanChats'),
-            settings: document.getElementById('adminSettings')
-        };
-
-        window.showAdminSection = (section) => {
-            Object.values(adminSections).forEach(s => s.style.display = 'none');
-            if (section === 'dashboard') adminSections.dashboard.style.display = 'block';
-            else if (section === 'users') adminSections.users.style.display = 'block';
-            else if (section === 'posts') adminSections.posts.style.display = 'block';
-            else if (section === 'celebs') adminSections.celebs.style.display = 'block';
-            else if (section === 'products') adminSections.products.style.display = 'block';
-            else if (section === 'fanchats') adminSections.fanchats.style.display = 'block';
-            else if (section === 'settings') adminSections.settings.style.display = 'block';
-        };
-
-        // Load admin data
-        function loadAdminData() {
-            // Users
-            const usersQuery = query(collection(db, 'users'));
-            onSnapshot(usersQuery, (snap) => {
-                users = snap.docs.map(d => ({ id: d.id, ...d.data() }));
-                document.getElementById('statUsers').innerText = users.length;
-                filterAdminUsers();
-            });
-
-            // Posts
-            const postsQuery = query(collection(db, 'posts'), orderBy('timestamp', 'desc'));
-            onSnapshot(postsQuery, (snap) => {
-                posts = snap.docs.map(d => ({ id: d.id, ...d.data() }));
-                document.getElementById('statPosts').innerText = posts.length;
-                renderAdminPosts();
-            });
-
-            // Celebrities
-            const celebsQuery = query(collection(db, 'celebrities'));
-            onSnapshot(celebsQuery, (snap) => {
-                celebs = snap.docs.map(d => ({ id: d.id, ...d.data() }));
-                document.getElementById('statCelebs').innerText = celebs.length;
-                renderAdminCelebs();
-            });
-
-            // Products
-            const productsQuery = query(collection(db, 'products'));
-            onSnapshot(productsQuery, (snap) => {
-                products = snap.docs.map(d => ({ id: d.id, ...d.data() }));
-                document.getElementById('statProducts').innerText = products.length;
-                renderAdminProducts();
-                renderMarketplace(); // also update marketplace
-            });
-
-            // Fan messages
-            const fanQuery = query(collection(db, 'adminMessages'), orderBy('timestamp', 'desc'));
-            onSnapshot(fanQuery, (snap) => {
-                fanMessages = snap.docs.map(d => ({ id: d.id, ...d.data() }));
-                renderFanChats();
-            });
-
-            // Music URL
-            getDoc(doc(db, 'settings', 'music')).then((docSnap) => {
-                if (docSnap.exists()) {
-                    document.getElementById('musicUrl').value = docSnap.data().url || '';
-                }
-            });
-        }
-
-        // Admin users list
-        function filterAdminUsers() {
-            const search = document.getElementById('adminSearchUsers').value.toLowerCase();
-            const filtered = users.filter(u => u.fullName?.toLowerCase().includes(search) || u.email?.toLowerCase().includes(search));
-            renderAdminUsers(filtered);
-        }
-
-        function renderAdminUsers(userList) {
-            const container = document.getElementById('adminUsersList');
-            if (!container) return;
-            container.innerHTML = userList.map(u => `
-                <div class="admin-card ${u.blocked ? 'blocked' : ''}">
-                    <img src="${u.avatar || defaultAvatar}" style="width:50px; height:50px; border-radius:50%; object-fit:cover;">
-                    <div><strong>${u.fullName}</strong> <span class="badge">VIP ${u.vipLevel}</span></div>
-                    <div style="font-size:0.8rem; color:#aaa;">${u.email}</div>
-                    <div class="admin-actions">
-                        <button class="btn-small btn-primary-small" onclick="adminChangeVIP('${u.id}', ${u.vipLevel})">VIP</button>
-                        <button class="btn-small btn-danger-small" onclick="adminDeleteUser('${u.id}')">Delete</button>
-                        <button class="btn-small btn-primary-small" onclick="adminNotifyUser('${u.id}', '${u.fullName}')">Notify</button>
-                        <button class="btn-small btn-warning-small" onclick="adminToggleBlock('${u.id}', ${u.blocked})">${u.blocked ? 'Unblock' : 'Block'}</button>
-                    </div>
-                </div>
-            `).join('');
-        }
-
-        window.adminChangeVIP = async (userId, current) => {
-            const newVIP = prompt(`Enter new VIP level (current: ${current}):`);
-            if (newVIP && !isNaN(newVIP) && newVIP >= 1) {
-                await updateDoc(doc(db, 'users', userId), { vipLevel: parseInt(newVIP) });
-                Toastify({ text: "VIP updated", backgroundColor: "green" }).showToast();
-            }
-        };
-
-        window.adminDeleteUser = async (userId) => {
-            if (confirm('Delete this user? This cannot be undone.')) {
-                await deleteDoc(doc(db, 'users', userId));
-                Toastify({ text: "User deleted", backgroundColor: "green" }).showToast();
-            }
-        };
-
-        window.adminToggleBlock = async (userId, currentlyBlocked) => {
-            await updateDoc(doc(db, 'users', userId), { blocked: !currentlyBlocked });
-            Toastify({ text: `User ${currentlyBlocked ? 'unblocked' : 'blocked'}`, backgroundColor: "green" }).showToast();
-        };
-
-        document.getElementById('adminSearchUsers').addEventListener('input', filterAdminUsers);
-
-        // Admin posts
-        function renderAdminPosts() {
-            const container = document.getElementById('adminPostsList');
-            if (!container) return;
-            container.innerHTML = posts.map(p => `
-                <div class="admin-card">
-                    <div><strong>${p.userName}</strong></div>
-                    <div style="font-size:0.8rem;">${p.caption?.substring(0,50)}${p.caption?.length > 50 ? '...' : ''}</div>
-                    <div class="admin-actions">
-                        <button class="btn-small btn-danger-small" onclick="adminDeletePost('${p.id}')">Delete</button>
-                        <button class="btn-small btn-warning-small" onclick="adminBlockUser('${p.userId}')">Block User</button>
-                    </div>
-                </div>
-            `).join('');
-        }
-
-        window.adminDeletePost = async (postId) => {
-            if (confirm('Delete this post?')) {
-                await deleteDoc(doc(db, 'posts', postId));
-                Toastify({ text: "Post deleted", backgroundColor: "green" }).showToast();
-            }
-        };
-
-        window.adminBlockUser = async (userId) => {
-            await updateDoc(doc(db, 'users', userId), { blocked: true });
-            Toastify({ text: "User blocked", backgroundColor: "green" }).showToast();
-        };
-
-        // Admin celebrities
-        function renderAdminCelebs() {
-            const container = document.getElementById('adminCelebsList');
-            if (!container) return;
-            container.innerHTML = celebs.map(c => `
-                <div class="admin-card">
-                    <img src="${c.img}" style="width:50px; height:50px; border-radius:50%; object-fit:cover;">
-                    <div><strong>${c.name}</strong></div>
-                    <div class="admin-actions">
-                        <button class="btn-small btn-primary-small" onclick="openFanChatAsCeleb('${c.name}', '${c.img}')">Chat as</button>
-                        <button class="btn-small btn-danger-small" onclick="adminDeleteCeleb('${c.id}')">Delete</button>
-                    </div>
-                </div>
-            `).join('');
-        }
-
-        window.adminAddCelebrity = async () => {
-            const name = document.getElementById('adminCelebName').value.trim();
-            const img = document.getElementById('adminCelebImg').value.trim();
-            if (!name || !img) return Toastify({ text: "Enter name and image URL" }).showToast();
-            await addDoc(collection(db, 'celebrities'), { name, img });
-            document.getElementById('adminCelebName').value = '';
-            document.getElementById('adminCelebImg').value = '';
-            Toastify({ text: "Celebrity added", backgroundColor: "green" }).showToast();
-        };
-
-        window.adminDeleteCeleb = async (celebId) => {
-            if (confirm('Delete this celebrity?')) {
-                await deleteDoc(doc(db, 'celebrities', celebId));
-                Toastify({ text: "Celebrity deleted", backgroundColor: "green" }).showToast();
-            }
-        };
-
-        // Admin products
-        function renderAdminProducts() {
-            const container = document.getElementById('adminProductsList');
-            if (!container) return;
-            container.innerHTML = products.map(p => `
-                <div class="admin-card">
-                    <div><strong>${p.name}</strong> - $${p.price}</div>
-                    <div class="admin-actions">
-                        <button class="btn-small btn-primary-small" onclick="adminEditProduct('${p.id}', '${p.name}', ${p.price}, '${p.icon || 'box'}')">Edit</button>
-                        <button class="btn-small btn-danger-small" onclick="adminDeleteProduct('${p.id}')">Delete</button>
-                    </div>
-                </div>
-            `).join('');
-        }
-
-        window.adminAddProduct = async () => {
-            const name = document.getElementById('adminProductName').value.trim();
-            const price = parseFloat(document.getElementById('adminProductPrice').value);
-            const icon = document.getElementById('adminProductIcon').value.trim() || 'box';
-            if (!name || isNaN(price)) return Toastify({ text: "Enter valid name and price" }).showToast();
-            await addDoc(collection(db, 'products'), { name, price, icon });
-            document.getElementById('adminProductName').value = '';
-            document.getElementById('adminProductPrice').value = '';
-            document.getElementById('adminProductIcon').value = 'box';
-            Toastify({ text: "Product added", backgroundColor: "green" }).showToast();
-        };
-
-        window.adminDeleteProduct = async (productId) => {
-            if (confirm('Delete this product?')) {
-                await deleteDoc(doc(db, 'products', productId));
-                Toastify({ text: "Product deleted", backgroundColor: "green" }).showToast();
-            }
-        };
-
-        window.adminEditProduct = async (id, oldName, oldPrice, oldIcon) => {
-            const name = prompt("Product name:", oldName);
-            if (name === null) return;
-            const price = parseFloat(prompt("Price:", oldPrice));
-            if (isNaN(price)) return;
-            const icon = prompt("Icon (Font Awesome name):", oldIcon) || 'box';
-            await updateDoc(doc(db, 'products', id), { name, price, icon });
-            Toastify({ text: "Product updated", backgroundColor: "green" }).showToast();
-        };
-
-        // Fan chats
-        function renderFanChats() {
-            const container = document.getElementById('fanChatsContainer');
-            if (!container) return;
-
-            const celebMap = new Map(); // celebName -> { avatar, users: { userId, userName, userAvatar, lastMessage, lastTime, fromAdmin } }
-
-            fanMessages.forEach(msg => {
-                const celebName = msg.celebrity;
-                const userId = msg.userId;
-                const userName = msg.userName || 'Unknown';
-                const userAvatar = msg.userAvatar || defaultAvatar;
-                const text = msg.message;
-                const time = msg.timestamp?.toDate?.() || new Date();
-                const fromAdmin = msg.fromAdmin || false;
-
-                if (!celebMap.has(celebName)) {
-                    const celeb = celebs.find(c => c.name === celebName);
-                    celebMap.set(celebName, {
-                        avatar: celeb ? celeb.img : defaultAvatar,
-                        users: new Map()
-                    });
-                }
-                const celebData = celebMap.get(celebName);
-                if (!celebData.users.has(userId)) {
-                    const user = users.find(u => u.id === userId);
-                    celebData.users.set(userId, {
-                        userId,
-                        userName,
-                        userAvatar,
-                        vip: user?.vipLevel || 1,
-                        lastMessage: text,
-                        lastTime: time,
-                        fromAdmin
-                    });
-                } else {
-                    const existing = celebData.users.get(userId);
-                    if (time > existing.lastTime) {
-                        existing.lastMessage = text;
-                        existing.lastTime = time;
-                        existing.fromAdmin = fromAdmin;
-                    }
-                }
-            });
-
-            let html = '';
-            for (let [celebName, celebData] of celebMap.entries()) {
-                const usersList = Array.from(celebData.users.values()).sort((a,b) => b.lastTime - a.lastTime);
-                html += `
-                    <div class="celeb-group">
-                        <div class="celeb-header" onclick="toggleCelebGroup(this)">
-                            <img src="${celebData.avatar}" onerror="this.src='${defaultAvatar}'">
-                            <span>${celebName}</span>
-                            <i class="fas fa-chevron-down"></i>
-                        </div>
-                        <div class="user-conversations">
-                `;
-                usersList.forEach(u => {
-                    const timeStr = formatTimeAgo(u.lastTime);
-                    html += `
-                        <div class="fan-card">
-                            <img src="${u.userAvatar}" onerror="this.src='${defaultAvatar}'">
-                            <div class="fan-info">
-                                <div class="name">${u.userName} <span class="badge">VIP ${u.vip}</span></div>
-                                <div class="last-msg">${u.fromAdmin ? '👑 You: ' : ''}${u.lastMessage}</div>
-                                <div class="time">${timeStr}</div>
-                            </div>
-                            <button class="btn-small btn-primary-small" onclick="openFullScreenFanChat('${celebName}', '${celebData.avatar}', '${u.userId}', '${u.userName}', '${u.userAvatar}')">Chat</button>
-                        </div>
-                    `;
-                });
-                html += `</div></div>`;
-            }
-            if (html === '') {
-                html = '<p style="color:#aaa; text-align:center;">No fan conversations yet.</p>';
-            }
-            container.innerHTML = html;
-        }
-
-        window.toggleCelebGroup = (header) => {
-            header.classList.toggle('collapsed');
-            const content = header.nextElementSibling;
-            if (content.style.display === 'none') {
-                content.style.display = 'block';
-            } else {
-                content.style.display = 'none';
-            }
-        };
-
-        // Full-screen fan chat
-        window.openFullScreenFanChat = (celebName, celebAvatar, userId, userName, userAvatar) => {
-            // Store current chat info
-            window.currentAdminChatUserId = userId;
-            window.currentAdminChatCeleb = { name: celebName, avatar: celebAvatar };
-            window.currentAdminChatUserData = { name: userName, avatar: userAvatar };
-            document.getElementById('adminChatAvatar').src = userAvatar;
-            document.getElementById('adminChatTitle').innerText = `Chat with ${userName} (as ${celebName})`;
-            document.getElementById('adminChatWindow').style.display = 'flex';
-            loadFullScreenChatMessages(userId, celebName);
-        };
-
-        function loadFullScreenChatMessages(userId, celebName) {
-            const chatId = [auth.currentUser.uid, userId].sort().join('_');
-            const messagesRef = collection(db, 'chats', chatId, 'messages');
-            if (window.adminChatUnsubscribe) window.adminChatUnsubscribe();
-            window.adminChatUnsubscribe = onSnapshot(query(messagesRef, orderBy('timestamp')), (snap) => {
-                const container = document.getElementById('adminChatMessages');
-                container.innerHTML = snap.docs.map(d => {
-                    const m = d.data();
-                    const isSent = m.sender === auth.currentUser.uid;
-                    return `<div class="admin-chat-message ${isSent ? 'sent' : 'received'}">${m.text}</div>`;
-                }).join('');
-                container.scrollTop = container.scrollHeight;
-            });
-        }
-
-        window.sendAdminChatMessage = async () => {
-            const input = document.getElementById('adminChatInput');
-            const text = input.value.trim();
-            if (!text || !window.currentAdminChatUserId) return;
-            const chatId = [auth.currentUser.uid, window.currentAdminChatUserId].sort().join('_');
-
-            await addDoc(collection(db, 'chats', chatId, 'messages'), {
-                sender: auth.currentUser.uid,
-                text: text,
-                timestamp: serverTimestamp()
-            });
-
-            await setDoc(doc(db, 'userChats', window.currentAdminChatUserId, 'chats', chatId), {
-                partnerName: window.currentAdminChatCeleb.name,
-                partnerAvatar: window.currentAdminChatCeleb.avatar,
-                partnerId: auth.currentUser.uid,
-                isCeleb: true,
-                lastMessage: text,
-                lastTimestamp: Date.now(),
-                unreadCount: increment(1)
-            }, { merge: true });
-
-            await addDoc(collection(db, 'adminMessages'), {
-                userId: window.currentAdminChatUserId,
-                userName: window.currentAdminChatUserData.name,
-                userAvatar: window.currentAdminChatUserData.avatar,
-                celebrity: window.currentAdminChatCeleb.name,
-                message: text,
-                timestamp: serverTimestamp(),
-                read: true,
-                fromAdmin: true
-            });
-
-            input.value = '';
-        };
-
-        window.closeAdminChatWindow = () => {
-            document.getElementById('adminChatWindow').style.display = 'none';
-            if (window.adminChatUnsubscribe) window.adminChatUnsubscribe();
-            window.currentAdminChatUserId = null;
-            window.currentAdminChatCeleb = null;
-            window.currentAdminChatUserData = null;
-        };
-
-        // Admin notifications
-        document.getElementById('notifyTarget').addEventListener('change', (e) => {
-            document.getElementById('notifyUserId').style.display = e.target.value === 'user' ? 'block' : 'none';
-        });
-
-        window.sendNotification = async () => {
-            const target = document.getElementById('notifyTarget').value;
-            const userId = document.getElementById('notifyUserId').value;
-            const title = document.getElementById('notifyTitle').value.trim();
-            const message = document.getElementById('notifyMessage').value.trim();
-            const link = document.getElementById('notifyLink').value.trim();
-            if (!title || !message) return Toastify({ text: "Fill title and message" }).showToast();
-
-            const notification = {
-                type: 'admin',
-                title,
-                message,
-                from: 'System',
-                avatar: defaultAvatar,
-                timestamp: serverTimestamp(),
-                read: false,
-                link: link || ''
-            };
-
-            if (target === 'all') {
-                const usersSnap = await getDocs(collection(db, 'users'));
-                const batch = writeBatch(db);
-                usersSnap.forEach(docSnap => {
-                    const notifRef = doc(collection(db, 'notifications'));
-                    batch.set(notifRef, { ...notification, userId: docSnap.id });
-                });
-                await batch.commit();
-                Toastify({ text: "Notifications sent to all users", backgroundColor: "green" }).showToast();
-            } else {
-                if (!userId) return Toastify({ text: "Enter user ID" }).showToast();
-                await addDoc(collection(db, 'notifications'), { ...notification, userId });
-                Toastify({ text: "Notification sent", backgroundColor: "green" }).showToast();
-            }
-        };
-
-        window.adminNotifyUser = (userId, userName) => {
-            document.getElementById('notifyTarget').value = 'user';
-            document.getElementById('notifyUserId').value = userId;
-            document.getElementById('notifyUserId').style.display = 'block';
-            document.getElementById('notifyTitle').focus();
-            Toastify({ text: `Now sending notification to ${userName}`, backgroundColor: "green" }).showToast();
-            // Switch to settings section
-            showAdminSection('settings');
-        };
-
-        // Global music
-        window.setMusicUrl = async () => {
-            const url = document.getElementById('musicUrl').value.trim();
-            await setDoc(doc(db, 'settings', 'music'), { url });
-            Toastify({ text: "Music URL updated", backgroundColor: "green" }).showToast();
-        };
-
-        // ========== MARKETPLACE BUY ==========
+        // ========== MARKETPLACE ==========
         window.openBuyModal = (name, price) => {
             selectedProduct = { name, price };
             document.getElementById('buyProductName').innerText = name + ' - $' + price;
@@ -2741,7 +2027,6 @@
                 document.getElementById('avatarModal').style.display = 'none';
                 Toastify({ text: "Avatar updated" }).showToast();
             } catch (e) {
-                console.error("Avatar upload error:", e);
                 status.innerText = 'Error: ' + e.message;
             }
         };
@@ -2775,7 +2060,7 @@
             }
         };
 
-        // ========== POSTS ==========
+        // ========== POSTS with comments ==========
         const uploadPostBtn = document.getElementById('uploadPostBtn');
         const postUploadModal = document.getElementById('postUploadModal');
         const postCaption = document.getElementById('postCaption');
@@ -2853,6 +2138,7 @@
                 const today = new Date().toDateString();
                 const vip = currentUserData.vipLevel || 1;
                 let newCount = 1;
+                let newDate = today;
                 if (vip < 4) {
                     const lastDate = currentUserData.lastUploadDate;
                     const oldCount = currentUserData.uploadCount || 0;
@@ -2884,7 +2170,6 @@
                 Toastify({ text: 'Post published!', backgroundColor: 'green' }).showToast();
                 updateUploadButton();
             } catch (e) {
-                console.error("Post upload error:", e);
                 postUploadStatus.textContent = 'Error: ' + e.message;
             }
         };
@@ -3054,12 +2339,14 @@
         // ========== ADMIN CHAT SUPPORT BUTTON ==========
         window.openAdminChat = async function() {
             if (!currentUser) return;
+
             if (adminUserData) {
                 openUserChat(adminUserData.fullName, adminUserData.avatar, adminUserData.uid);
                 return;
             }
+
             try {
-                const q = query(collection(db, 'users'), where('email', '==', ADMIN_EMAIL));
+                const q = query(collection(db, 'users'), where('email', '==', 'moxxxtiox@gmail.com'));
                 const querySnapshot = await getDocs(q);
                 if (querySnapshot.empty) {
                     Toastify({ text: "Admin user not found", backgroundColor: "#e74c3c" }).showToast();
@@ -3077,11 +2364,38 @@
             }
         };
 
+        // ========== LOAD PRODUCTS FROM FIRESTORE ==========
+        async function loadProducts() {
+            const q = query(collection(db, 'products'));
+            onSnapshot(q, (snap) => {
+                const products = snap.docs.map(d => ({ id: d.id, ...d.data() }));
+                renderMarketplace(products);
+            });
+        }
+
+        function renderMarketplace(products) {
+            const grid = document.getElementById('productsGrid');
+            if (!grid) return;
+            if (products.length === 0) {
+                grid.innerHTML = '<div class="card">No products available yet.</div>';
+                return;
+            }
+            grid.innerHTML = products.map(p => `
+                <div class="product-card">
+                    <div class="product-img"><i class="fas fa-${p.icon || 'box'}"></i></div>
+                    <div class="product-info">
+                        <div class="product-title">${p.name}</div>
+                        <div class="product-price">$${p.price}</div>
+                        <button class="btn-buy" onclick="openBuyModal('${p.name}', ${p.price})">Buy Now</button>
+                    </div>
+                </div>
+            `).join('');
+        }
+
         // ========== AUTH STATE ==========
         onAuthStateChanged(auth, async (user) => {
             if (user) {
                 currentUser = user;
-                console.log("User logged in:", user.email);
                 const docSnap = await getDoc(doc(db, 'users', user.uid));
                 if (docSnap.exists()) {
                     currentUserData = docSnap.data();
@@ -3115,22 +2429,8 @@
 
                 document.getElementById('bellIcon').addEventListener('click', toggleNotificationDropdown);
 
-                // Check if admin
-                const isAdmin = (user.email === ADMIN_EMAIL);
-                if (isAdmin) {
-                    console.log("Admin detected, adding admin tab");
+                if (user.email === 'moxxxtiox@gmail.com') {
                     document.getElementById('adminCelebForm').style.display = 'block';
-                    // Add admin nav item if not already present
-                    const bottomNav = document.getElementById('bottomNav');
-                    if (!document.querySelector('.nav-item[onclick*="admin"]')) {
-                        const adminNav = document.createElement('div');
-                        adminNav.className = 'nav-item';
-                        adminNav.setAttribute('onclick', 'navTo(\'admin\', this)');
-                        adminNav.innerHTML = '<i class="fas fa-crown"></i><span>Admin</span>';
-                        bottomNav.appendChild(adminNav);
-                    }
-                    // Load admin data
-                    loadAdminData();
                 } else {
                     document.getElementById('adminCelebForm').style.display = 'none';
                 }
@@ -3196,7 +2496,6 @@
                 });
                 return stream;
             } catch (error) {
-                console.error("Media error:", error);
                 if (error.name === 'NotAllowedError' || error.name === 'PermissionDeniedError') {
                     Toastify({ text: "Camera/Microphone access denied. Please allow permissions.", backgroundColor: "#e74c3c" }).showToast();
                 } else if (error.name === 'NotFoundError') {
